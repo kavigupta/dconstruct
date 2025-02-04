@@ -1,6 +1,6 @@
+import unittest
 from dataclasses import dataclass
 from typing import List
-import unittest
 
 from dconstruct import construct
 
