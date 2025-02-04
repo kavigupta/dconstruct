@@ -14,6 +14,8 @@ def construct(type_map, spec, **default_kwargs):
         raise ValueError("Specification must have a 'type' key.")
     type_name = spec.pop("type")
     if type_name not in type_map:
-        raise ValueError(f"Unknown type '{type_name}'. Must be one of {sorted(type_map.keys())}.")
+        raise ValueError(
+            f"Unknown type '{type_name}'. Must be one of {sorted(type_map.keys())}."
+        )
     default_kwargs.update(spec)
     return type_map[type_name](**default_kwargs)
