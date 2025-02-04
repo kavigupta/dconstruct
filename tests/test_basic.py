@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from typing import List
 import unittest
 
 from dconstruct import construct
@@ -19,7 +20,7 @@ class NonHumanAnimal:
 @dataclass
 class Zoo:
     location: str
-    animals: list[NonHumanAnimal | Person]
+    animals: List
 
 
 def animal_types():
@@ -79,6 +80,10 @@ class TestConstruct(unittest.TestCase):
             ),
             Zoo(
                 location="San Diego",
-                animals=[NonHumanAnimal(name="Lion", species="Panthera leo"), NonHumanAnimal(name="Default", species="Canis lupus"), Person(name="Julian", age=30)],
+                animals=[
+                    NonHumanAnimal(name="Lion", species="Panthera leo"),
+                    NonHumanAnimal(name="Default", species="Canis lupus"),
+                    Person(name="Julian", age=30),
+                ],
             ),
         )
